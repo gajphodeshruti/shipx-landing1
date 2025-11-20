@@ -1,74 +1,228 @@
-10) README.md template (use this in your repo)
-# Laravel Landing + CRUD Assignment
+# 🚀 Backend Developer Assignment (Laravel)
 
-## Overview
-Convert a Figma landing page into a responsive Laravel webpage with a contact form that stores leads into MySQL and a simple CRUD dashboard. Also provides REST APIs.
+This project is a Backend Developer Task where a Figma landing page is converted into a responsive Laravel application with form submission, CRUD dashboard, and full REST API support.
 
-## Setup
-1. Clone repo
+---
+
+# 📌 Features
+
+### ✔ Responsive Landing Page (Based on given Figma)
+### ✔ Form Submission → Save Data to MySQL
+### ✔ CRUD Dashboard (Create, Read, Update, Delete)
+### ✔ Full REST API (GET, POST, PUT, DELETE)
+### ✔ Laravel Validation Included
+### ✔ Resource Controller Used
+### ✔ Tailwind/Bootstrap UI (Choose whichever you used)
+### ✔ Postman Collection Included (Optional)
+
+---
+
+# 🛠️ Tech Stack Used
+- **Laravel 10 / 11**
+- **MySQL**
+- **TailwindCSS / Bootstrap**
+- **Blade Templates**
+- **REST API Architecture**
+
+---
+
+# ⚙️ Setup Instructions (Run Project Locally)
+
+Follow these steps to run the project on your local machine:
+
+---
+
+## 1️⃣ Clone the Repository
+
 ```bash
-git clone <your-repo-url>
-cd project
+git clone https://github.com/yourusername/your-repository.git
+```
+
+---
+
+## 2️⃣ Go to Project Folder
+
+```bash
+cd your-repository
+```
+
+---
+
+## 3️⃣ Install Composer Dependencies
+
+```bash
 composer install
+```
+
+---
+
+## 4️⃣ Install Node Modules (If UI used Tailwind/Bootstrap)
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+## 5️⃣ Create Environment File
+
+```bash
 cp .env.example .env
+```
+
+---
+
+## 6️⃣ Generate Application Key
+
+```bash
 php artisan key:generate
+```
 
+---
 
-Configure .env database settings.
+## 7️⃣ Configure Database (.env)
 
-Run migrations:
+Update your database details:
 
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_db_name
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+---
+
+## 8️⃣ Run Migrations (Create Tables)
+
+```bash
 php artisan migrate
+```
 
+---
 
-Serve:
+## 9️⃣ Start Local Server
 
+```bash
 php artisan serve
+```
 
-Database
+Now visit:  
+👉 http://127.0.0.1:8000
 
-leads table:
+---
 
-id
+# 🗄 Database Structure
 
-name
+**Table: leads**
 
-business_name
+| Column Name | Type | Description |
+|------------|------|-------------|
+| id | bigint | Primary Key |
+| name | varchar | Full Name |
+| email | varchar | Email Address |
+| phone | varchar | Phone Number |
+| message | text | Message/Description |
+| created_at | timestamp | Record created date |
+| updated_at | timestamp | Record updated date |
 
-email
+If you added more fields, add them here.
 
-phone
+---
 
-message
+# 🔗 API Documentation
 
-timestamps
+All APIs follow REST architecture.
 
-deleted_at (soft deletes)
+---
 
-Routes
+## 📌 1. GET – List all records
 
-Web:
+**Endpoint:**
+```
+GET /api/leads
+```
 
-GET / — Landing page with form
+**Response:**
+```json
+[
+  {
+    "id": 1,
+    "name": "John",
+    "email": "john@example.com",
+    "phone": "9876543210",
+    "message": "Test message"
+  }
+]
+```
 
-POST /lead — Submit lead form
+---
 
-GET /dashboard — Leads list (CRUD)
+## 📌 2. POST – Create new record
 
-GET /dashboard/{id}/edit — Edit lead
+**Endpoint:**
+```
+POST /api/leads
+```
 
-PUT /dashboard/{id} — Update lead
+**Body Params:**
+```json
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "phone": "9876543210",
+  "message": "New lead"
+}
+```
 
-DELETE /dashboard/{id} — Delete lead
+---
 
-API:
+## 📌 3. PUT – Update record
 
-GET /api/leads — list
+**Endpoint:**
+```
+PUT /api/leads/{id}
+```
 
-POST /api/leads — create
+**Body Params:**
+(Same as POST)
 
-GET /api/leads/{id} — show
+---
 
-PUT /api/leads/{id} — update
+## 📌 4. DELETE – Delete record
 
-DELETE /api/leads/{id} — delete
+**Endpoint:**
+```
+DELETE /api/leads/{id}
+```
+
+**Response:**
+```json
+{
+  "message": "Lead deleted successfully"
+}
+```
+
+---
+
+# 🧪 Postman Collection
+If included, mention:
+```
+Postman collection is available in /postman folder.
+```
+
+---
+
+# 👩‍💻 Developer Information
+**Name:** Shruti Sandip Gajphode  
+**Role:** PHP / Laravel Developer  
+**GitHub:** https://github.com/yourusername  
+
+---
+
+# 🎉 Thank You!
+
+This assignment demonstrates backend development skills with Laravel, REST APIs, MySQL integration, and GitHub project management.
